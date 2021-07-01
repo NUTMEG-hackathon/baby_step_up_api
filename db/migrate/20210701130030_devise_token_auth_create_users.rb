@@ -40,6 +40,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.integer :select_template
       t.integer :doing_step
+      t.time :reset_time
 
       ## Tokens
       t.text :tokens
