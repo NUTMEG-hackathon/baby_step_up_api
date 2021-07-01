@@ -4,5 +4,10 @@ Rails.application.routes.draw do
       registrations: 'api/auth/registrations'
     }
   end
+  namespace 'api' do
+    namespace 'v1' do
+      get "users/index" => "users#index"
+    end
+  end
 end
 
