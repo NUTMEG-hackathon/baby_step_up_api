@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :done_steps
   resources :steps
   resources :templates
   namespace :api do
