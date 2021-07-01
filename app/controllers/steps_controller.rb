@@ -19,14 +19,14 @@ class StepsController < ApplicationController
   def create
     @step = Step.new(step_params)
     @step.save
-    render json: @steps
+    render json: @step
   end
 
   # PATCH/PUT /steps/1
   # PATCH/PUT /steps/1.json
   def update
     @step.update(step_params)
-    render json: @steps
+    render json: @step
   end
 
   # DELETE /steps/1
