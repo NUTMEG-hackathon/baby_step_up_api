@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## git cleneしたら
 
-Things you may want to cover:
+`docker-compose build`
 
-* Ruby version
+`docker-compose up`
 
-* System dependencies
+`http://localhost:3000`にいくと，データベースがないといわれるので，
 
-* Configuration
+コンテナをたてたままの状態で，
 
-* Database creation
+`docker-compose run api rails db:create`
 
-* Database initialization
+`docker-compose run api rails db:migrate`
 
-* How to run the test suite
+`docker-compose run api rails db:seed_fu`
 
-* Services (job queues, cache servers, search engines, etc.)
+`http://localhost:3000`にいくと，railsのwelcomeページが現れる．
 
-* Deployment instructions
+railsのwelcomeページが出るが，api飛ばすだけなので今回は気にしない．
 
-* ...
+`docker-compose down`をすると，なぜかデータベースが消えるので，
+
+再度`rails db:create`をしていく．
+
+なので，最初に必要なものはあらかた`rails db:seed_fu`で作成させる．
+
+api一覧は`/docks/api_list.md`に記載する
