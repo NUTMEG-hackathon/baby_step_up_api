@@ -7,6 +7,8 @@ services:
       MYSQL_DATABASE: root
     ports:
       - "3306:3306"
+    volumes:
+      - ./src/db/mysql_data:/var/lib/mysql
 
   api:
     build: .

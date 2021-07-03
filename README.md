@@ -20,10 +20,7 @@
 
 railsのwelcomeページが出るが，api飛ばすだけなので今回は気にしない．
 
-`docker-compose down`をすると，なぜかデータベースが消えるので，
-
-再度`rails db:create`をしていく．
-
-なので，最初に必要なものはあらかた`rails db:seed_fu`で作成させる．
+model一覧は`/docs/model_list.md`に，
 
 api一覧は`/docs/api_list.md`に記載する
+
