@@ -26,4 +26,4 @@ railsのwelcomeページが出るが，api飛ばすだけなので今回は気�
 
 なので，最初に必要なものはあらかた`rails db:seed_fu`で作成させる．
 
-api一覧は`/docks/api_list.md`に記載する
+api一覧は`/docs/api_list.md`に記載する
