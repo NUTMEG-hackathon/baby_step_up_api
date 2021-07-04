@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
   end
   
   def get_user_reset_time
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:template_id])
     reset_time = @user.reset_time
     render json: {reset_time: reset_time}
   end
