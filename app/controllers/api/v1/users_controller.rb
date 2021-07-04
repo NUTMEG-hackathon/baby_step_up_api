@@ -25,6 +25,40 @@ class Api::V1::UsersController < ApplicationController
     }
   end
 
+  def get_user_doing_step
+    @user = User.find(params[:user_id])
+    select_template = @user.select_template
+    doing_step = @user.doing_step
+    steps = Template.all.find(select_template).steps
+    return_doing_step = steps[doing_step-1]
+    render json: {
+      doing_step: return_doing_step
+    }
+  end
+
+  def get_user_next_step
+    @user = User.find(params[:user_id])
+    select_template = @user.select_template
+    doing_step = @user.doing_step
+    steps = Template.all.find(select_template).steps
+    step_length = steps.length
+    if doing_step != step_length
+      next_step = steps[doing_step]
+      doing_step += 1
+      render json: {
+        next_step: next_step,
+      }
+      @user.doing_step = doing_step
+      @user.save!
+    else
+      render json: {
+        step_length: step_length,
+        doing_step: doing_step
+      }
+    end
+  end
+
+
   def update_select_template
     @user = User.find(update_select_template_params[:user_id])
     @user.select_template = update_select_template_params[:select_template]

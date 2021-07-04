@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       get "users/index" => "users#index"
       get "users/get_user_reset_time/:user_id" => "users#get_user_reset_time"
       get "users/get_user_template_list/:user_id" => "users#get_user_template_list"
+      get "users/get_user_doing_step/:user_id" => "users#get_user_doing_step" 
+      get "users/get_user_next_step/:user_id" => "users#get_user_next_step" 
       put "users/update_select_template" => "users#update_select_template"
       put "users/update_doing_step" => "users#update_doing_step"
       put "users/update_reset_time" => "users#update_reset_time"
