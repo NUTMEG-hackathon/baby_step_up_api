@@ -10,6 +10,12 @@ class Api::V1::UsersController < ApplicationController
     @user.save!
   end
 
+  def update_doing_step
+    @user = User.find(update_doing_step_params[:user_id])
+    @user.doing_step = update_doing_step_params[:doing_step]
+    @user.save!
+  end
+
   def update_reset_time
     @user = User.find(update_reset_time_params[:user_id])
     @user.reset_time = update_reset_time_params[:reset_time]
@@ -20,6 +26,10 @@ class Api::V1::UsersController < ApplicationController
   
     def update_select_template_params
       params.permit(:user_id, :select_template)
+    end
+
+    def update_doing_step_params
+      params.permit(:user_id, :doing_step)
     end
 
     def update_reset_time_params
