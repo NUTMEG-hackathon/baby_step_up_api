@@ -5,9 +5,24 @@ class Api::V1::UsersController < ApplicationController
   end
   
   def get_user_reset_time
-    @user = User.find(params[:template_id])
+    @user = User.find(params[:user_id])
     reset_time = @user.reset_time
     render json: {reset_time: reset_time}
+  end
+
+  def get_user_template_list
+    @user = User.find(params[:user_id])
+    templates = @user.templates
+    favorites_raw = @user.favorite_templates
+    favorites = []
+    for favorite_raw in favorites_raw
+      favorite = favorite_raw.template
+      favorites << favorite
+    end
+    render json: {
+      templates: templates,
+      favorites: favorites
+    }
   end
 
   def update_select_template
