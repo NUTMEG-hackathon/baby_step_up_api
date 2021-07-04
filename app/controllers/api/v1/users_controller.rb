@@ -3,6 +3,12 @@ class Api::V1::UsersController < ApplicationController
     users = User.all
     render json: { status: 'SUCCESS', message: 'Loaded posts', data: users }
   end
+  
+  def get_user_reset_time
+    @user = User.find(params[:user_id])
+    reset_time = @user.reset_time
+    render json: {reset_time: reset_time}
+  end
 
   def update_select_template
     @user = User.find(update_select_template_params[:user_id])
