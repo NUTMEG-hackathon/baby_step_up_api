@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     namespace 'v1' do
       # User
       get "users/index" => "users#index"
-      get "users/get_user_reset_time/:template_id" => "users#get_user_reset_time"
+      get "users/get_user_reset_time/:user_id" => "users#get_user_reset_time"
+      get "users/get_user_template_list/:user_id" => "users#get_user_template_list"
       put "users/update_select_template" => "users#update_select_template"
       put "users/update_doing_step" => "users#update_doing_step"
       put "users/update_reset_time" => "users#update_reset_time"
