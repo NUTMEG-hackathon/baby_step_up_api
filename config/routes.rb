@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace 'v1' do
       get "users/index" => "users#index"
       put "users/update_select_template" => "users#update_select_template"
+      put "users/update_doing_step" => "users#update_doing_step"
       put "users/update_reset_time" => "users#update_reset_time"
     end
   end
