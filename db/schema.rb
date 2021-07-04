@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_07_01_195703) do
     t.string "email"
     t.integer "select_template"
     t.integer "doing_step"
-    t.time "reset_time"
+    t.string "reset_time"
     t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
